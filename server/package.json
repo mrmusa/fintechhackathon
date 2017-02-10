@@ -1,0 +1,29 @@
+{
+  "name": "fintech-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "backpack-core": "0.0.7",
+    "bluebird": "^3.4.7",
+    "nconf": "^0.8.4",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "backpack",
+    "build": "backpack build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mrmusa/fintechhackathon.git"
+  },
+  "author": "",
+  "license": "Private",
+  "bugs": {
+    "url": "https://github.com/mrmusa/fintechhackathon/issues"
+  },
+  "homepage": "https://github.com/mrmusa/fintechhackathon#readme"
+}
