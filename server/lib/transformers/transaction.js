@@ -1,9 +1,10 @@
+import moment from 'moment'
+
 export default (tsysRes) => {
     const { transactions } = tsysRes;
 
     // TODO: change to reduce
-    // filter for 1855411 and 1628587
-    return { transactions: transactions.map(txn => {
+    return { transactions: transactions.reduce((result, txn) => {
         const {
             date,
             postingId,
@@ -16,12 +17,16 @@ export default (tsysRes) => {
             statementBeginDate
         } = txn;
 
-        return {
-            description: meta.description,
-            merchant,
-            date,
-            id: postingId,
-            amount
+        if (!['1855411','1628587'].includes(postingId)) {
+            result.push({
+                description: meta.description,
+                merchant,
+                date: moment(date).add(70, 'd').format('YYYY-MM-DD'),
+                id: postingId,
+                amount
+            })
         }
-    })};
+
+        return result;
+    }, [])};
 }

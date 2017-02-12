@@ -1,4 +1,4 @@
-// import 'babel-polyfill'
+import 'babel-polyfill'
 import express from 'express';
 import api from './api'
 import config from './config'

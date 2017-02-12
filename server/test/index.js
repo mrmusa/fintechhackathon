@@ -24,7 +24,7 @@ describe('Example Node Server', function() {
 
     it('should return 200 for /api/txn/latest', () => {
         return Bluebird.resolve(rp({ uri: `${BASE_URL}/api/txn/latest`, json: true }))
-            .then(txnRes => assert.equal(10, txnRes.transactions.length));
+            .then(txnRes => assert.equal(8, txnRes.transactions.length));
     });
 });
 
