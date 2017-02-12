@@ -1,16 +1,12 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
-</ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Zen Spend!</h2>
+  <img src="assets/logoreal.png" />
   <ion-list>
     <ion-item-sliding #item *ngFor="let post of posts; let i = index">
       <ion-item>
       {{post.date}}
       {{post.merchant.name}}
+      ${{post.amount.value}}
       </ion-item>
 
       <ion-item-options side="left" >

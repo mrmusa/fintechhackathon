@@ -17,7 +17,7 @@ export default (tsysRes) => {
             statementBeginDate
         } = txn;
 
-        if (!['1855411','1628587'].includes(postingId)) {
+        if (!['1855411','1628587', '1712068'].includes(postingId)) {
             result.push({
                 description: meta.description,
                 merchant,
