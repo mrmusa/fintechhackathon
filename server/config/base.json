@@ -1,0 +1,25 @@
+{
+  "port": 1337,
+  "logging": {
+    "name": "ZenSpend-api-logger",
+    "level": "info"
+  },
+  "opts": {
+    "tsys": {
+      "uri": "https://beta.tsysapi.com/sandbox/transaction/card-{cardNumber}/cycle/from-{dateFrom}/to-{dateTo}",
+      "headers": {
+        "authorization": "Bearer 51132146540652",
+        "content-type": "application/json",
+        "accept": "application/json"
+      },
+      "json": true
+    },
+    "flow": {
+      "uri": "https://qa.flow.data-city.io/v2/title/",
+      "qs": {
+        "api_key": "5003c380-9408-11e3-898c-05a31ad5b870"
+      },
+      "json": true
+    }
+  }
+}
