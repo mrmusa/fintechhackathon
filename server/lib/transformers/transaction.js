@@ -17,7 +17,8 @@ export default (tsysRes) => {
         return {
             description: meta.description,
             merchant,
-            date
+            date,
+            id: postingId
         }
     })};
 }
