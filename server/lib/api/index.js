@@ -2,7 +2,7 @@ import express from 'express'
 import rp from 'request-promise'
 import templates from 'uri-templates'
 import config from '../config'
-import xTransactions from '../lib/transformers/transaction'
+import xTransactions from '../transformers/transaction'
 
 const notImplemented = (req, res, next) => res.status(501).json({ 'error': 'NotImplemented' });
 const router = express.Router();

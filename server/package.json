@@ -19,10 +19,11 @@
     "mocha": "^3.2.0"
   },
   "scripts": {
-    "test": "mocha --compilers js:babel-register",
-    "start": "nodemon index.js --exec babel-node",
-    "build": "babel lib -d dist",
-    "serve": "node dist/index.js"
+    "test": "NODE_ENV=test mocha --compilers js:babel-register",
+    "dev": "nodemon lib/index.js --exec babel-node",
+    "build": "babel lib --out-dir dist --ignore node_modules,Dockerfile,**/*.log,**/*.md --copy-files",
+    "start": "node dist/index.js",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
