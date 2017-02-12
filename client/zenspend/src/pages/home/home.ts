@@ -12,23 +12,43 @@ import 'rxjs/add/operator/map';
 export class HomePage {
   posts: Array<any>;
 
+  purchase:Array<any>;
+
   constructor(public http: Http) {
 
 	  this.http.get('https://cors.now.sh/https://zen-spend.herokuapp.com/api/txn/latest').map(res => res.json()).subscribe(data => {
 
-	        console.log(data.transactions[9].merchant.name);
-	        const nameArray = [];
-	        console.log(data.transactions);
-	        for (var i = 0; i < data.transactions.length; i++) {
-	        	if (data.transactions[i].merchant === undefined) {
-	        		console.log(data.transactions[i].merchant);
-	        		nameArray.push(data.transactions[i].merchant.name);
-	        	}
-	        	else {
-	        		console.log("error");
-	        	}
-	        }
-	        this.posts = nameArray;
+	  		this.posts = data.transactions;
+	  		const expense = [];
+
+	  		const merchantInfo = [
+	  				{
+	  					merchant:[]
+	  				},
+	  				{
+	  					date:[]
+	  				},
+	  				{
+	  					amount:[]
+	  				},
+	  				{
+	  					location:[]
+	  				}
+	  			];
+
+	  		data.transactions.map(element => {
+	  			if(element.merchant){
+	  				expense.push(element.merchant.name);
+	  			}
+
+	  			else {
+	  				console.log("Late payment!");
+	  			}
+	  		});
+
+	  		console.log(expense);
+	  		this.purchase = expense;
+	       
 	    });
 
 	  // this.posts = [
@@ -46,6 +66,3 @@ export class HomePage {
   	console.log("Hey Testing");
   }
 }
-
-
-

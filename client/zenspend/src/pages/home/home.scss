@@ -8,13 +8,20 @@
 			}
 
 			ion-list{
-				border:1px solid rgba(0, 0, 0, 0.5);
-				height:150px;
+				/*border:1px solid rgba(0, 0, 0, 0.5);*/
+				height: 250px;
+				
 			}
 
 			ion-item{
+				height: 250px;
+				/*width: 100%;*/
 				text-align:center;
-				height:150px;
+			}
+
+			ion-item-options button{
+				/*width: 100%;*/
+
 			}
 		}	
 }
