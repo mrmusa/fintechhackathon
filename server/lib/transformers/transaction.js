@@ -21,7 +21,7 @@ export default (tsysRes) => {
             result.push({
                 description: meta.description,
                 merchant,
-                date: moment(date).add(70, 'd').format('YYYY-MM-DD'),
+                date: moment(date).add(70, 'd').format('ddd, MMM D'),
                 id: postingId,
                 amount
             })
