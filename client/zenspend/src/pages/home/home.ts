@@ -1,7 +1,5 @@
 import { Component } from '@angular/core';
 
-import { NavController } from 'ionic-angular';
-
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
@@ -16,40 +14,12 @@ export class HomePage {
 
   constructor(public http: Http) {
 
-	  this.http.get('https://cors.now.sh/https://zen-spend.herokuapp.com/api/txn/latest').map(res => res.json()).subscribe(data => {
+    http.get('https://zen-spend.herokuapp.com/api/txn/latest')
+      .map(res => res.json()).subscribe(data => {
 
-	  		this.posts = data.transactions;
-	  		const expense = [];
+      this.posts = data.transactions;
 
-	  		const merchantInfo = [
-	  				{
-	  					merchant:[]
-	  				},
-	  				{
-	  					date:[]
-	  				},
-	  				{
-	  					amount:[]
-	  				},
-	  				{
-	  					location:[]
-	  				}
-	  			];
-
-	  		data.transactions.map(element => {
-	  			if(element.merchant){
-	  				expense.push(element.merchant.name);
-	  			}
-
-	  			else {
-	  				console.log("Late payment!");
-	  			}
-	  		});
-
-	  		console.log(expense);
-	  		this.purchase = expense;
-	       
-	    });
+    });
 
 	  // this.posts = [
 	  // 	{ merchant: 'Esterling', date: '2017-02-02' },
